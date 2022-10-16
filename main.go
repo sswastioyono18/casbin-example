@@ -48,8 +48,6 @@ func main() {
 		log.Println("LoadPolicy failed, err: ", err)
 	}
 
-	fmt.Println("test 2")
-
 	router.Group(func(r chi.Router) {
 		r.Route("/api/v1", func(r chi.Router) {
 			r.Use(authz.Authorizer(e))
